@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Materialize - Compiled and minified CSS-->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"
+    />
+    <!-- Font Awesome Icon - CSS-->
+	<script src="https://kit.fontawesome.com/ef0aa50988.js" crossorigin="anonymous"></script>
+    <title>Андрей Кусков | Junior Back-end Developer</title>
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="{% static 'resume/style/style.css' %}" />
+  </head>
+  <body>
+    {% include 'resume/nav.html' %}
+
+	<main>
+		{% include 'resume/intro.html' %}
+		{% include 'resume/about.html' %}
+		{% include 'resume/experience.html' %}
+		{% include 'resume/projects.html' %}
+		{% include 'resume/skills.html' %}
+		{% include 'resume/education.html' %}
+		{% include 'resume/contact.html' %}
+    </main>
+
+    <!-- jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Materialize - Compiled and minified JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <script>
+      // Materialize - Initializers
+      $(document).ready(function () {
+        $(".scrollspy").scrollSpy();
+        // Initialize collapse button
+        $(".button-collapse").sideNav({
+          menuWidth: 190, // Default is 240
+          edge: "left", // Choose the horizontal origin
+          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        });
+      });
+    </script>
+  </body>
+</html>

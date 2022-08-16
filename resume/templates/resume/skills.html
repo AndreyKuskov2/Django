@@ -1,0 +1,29 @@
+{% load static %} 
+
+{% block skills %}
+<section id="skills" class="section scrollspy">
+  <h3 class="page-title white-text teal">Навыки и умения</h3>
+  <div class="container">
+	{% for skill in skills %}
+		<div class="card">
+			<div class="card-content">
+				<h4 class="brown-text light">{{ skill.name }}</h4>
+				<div class="row text-center">
+					{% for technology in technologies %}
+						{% if technology.group_id.name == skill.name %}
+							<div class="col s4 m2">
+								<img
+								alt=""
+								src="{{ technology.image.url }}"
+								class="responsive-img"
+								/>{{ technology.name }}
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+  </div>
+</section>
+{% endblock skills %}
